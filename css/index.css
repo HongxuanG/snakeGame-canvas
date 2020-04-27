@@ -1,0 +1,77 @@
+html,body,h1,h2,h3,h4,h5,h6,ul,ol{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #333;
+}
+.snake_header{
+    height: 40px;
+    background-color: #f0f0f0;
+    text-align: center;
+    line-height: 40px;
+}
+.snake_content{
+    width: 1200px;
+    margin: 0 auto;
+}
+.snake_content canvas{
+    display: block;
+    background-color: skyblue;
+    margin: 0 auto;
+}
+.snake_content .grade{
+    color: white;
+    width: 250px;
+    margin: 20px auto;
+}
+.snake_content .grade input{
+    outline: none;
+    border: none;
+    background-color: skyblue;
+    color: tomato;
+    height: 40px;
+}
+.startGame{
+    float: left;
+}   
+.stopGame{
+    float: right;
+}
+button{
+    position: relative;
+    width: 100px;
+    height: 30px;
+    background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+    background-size:400%;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #f0f0f0;
+    font-size: 16px;
+}
+button::after{
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+    background-size:400%;
+    border-radius: 50px;
+    filter: blur(5px);/*高斯模糊*/
+    z-index: -1;
+}
+button:hover{
+    animation: light 2s linear 0s infinite;
+}
+button:hover::after{
+    animation: light 2s linear 0s infinite;
+}
+@keyframes light{
+    100%{
+        background-position: -400% 0;
+    }
+}
